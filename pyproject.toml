@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "coursework_7_DRF"
+version = "0.1.0"
+description = ""
+authors = ["Your Name <you@example.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+django = "^4.2.11"
+psycopg2-binary = "^2.9.9"
+pillow = "^10.2.0"
+djangorestframework = "^3.14.0"
+python-dotenv = "^1.0.1"
+django-filter = "^24.1"
+djangorestframework-simplejwt = "^5.3.1"
+coverage = "^7.4.4"
+drf-yasg = "^1.21.7"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+django = "^4.1.12"
