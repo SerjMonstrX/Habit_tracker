@@ -33,7 +33,7 @@ class PleasantHabitValidator:
     def __call__(self, value):
         if value.reward:
             raise ValidationError("Приятная привычка не может иметь вознаграждения.")
-        if value.related_habits.exists():
+        if value.related_habits and value.related_habits.exists():
             raise ValidationError("Приятная привычка не может иметь связанной привычки.")
 
 
