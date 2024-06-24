@@ -5,6 +5,6 @@ from habits.models import Habit
 
 @admin.register(Habit)
 class HabitAdmin(admin.ModelAdmin):
-    list_display = ('creator', 'name', 'time', 'is_public', 'is_pleasant', )
-    list_filter = ('creator', 'name', 'time', 'is_public', 'is_pleasant', )
-    search_fields = ('creator', 'name', 'time', 'is_public', 'is_pleasant', )
+    list_display = ('id', 'creator', 'name', 'time', 'is_public', 'is_pleasant', 'last_reminded', )
+    list_filter = ('id', 'creator', 'name', 'time', 'is_public', 'is_pleasant', 'last_reminded', )
+    search_fields = ('id', 'creator', 'name', 'time', 'is_public', 'is_pleasant', 'last_reminded', )

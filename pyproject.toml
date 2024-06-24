@@ -21,6 +21,7 @@ celery = "^5.4.0"
 redis = "^5.0.6"
 django-celery-beat = "^2.6.0"
 django-cors-headers = "^4.4.0"
+eventlet = "^0.36.1"
 
 [build-system]
 requires = ["poetry-core"]
