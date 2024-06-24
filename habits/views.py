@@ -1,5 +1,6 @@
 from django.db.models import Q
 from rest_framework.generics import CreateAPIView, UpdateAPIView, ListAPIView, RetrieveAPIView, DestroyAPIView
+from rest_framework.permissions import IsAuthenticated
 
 from habits.models import Habit
 from habits.paginators import CustomPagination
@@ -9,7 +10,7 @@ from habits.serializers import HabitSerializer
 
 class HabitCreateAPIView(CreateAPIView):
     serializer_class = HabitSerializer
-    permission_classes = [IsCreator]
+    permission_classes = [IsAuthenticated]
 
     def perform_create(self, serializer):
         user = self.request.user

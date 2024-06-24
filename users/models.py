@@ -33,7 +33,6 @@ class UserManager(BaseUserManager):
 class User(AbstractUser):
     username = None
     email = models.EmailField(verbose_name='почта', unique=True)
-    verification_token = models.CharField(max_length=100, verbose_name='Токен верификации', **NULLABLE)
     chat_id = models.CharField(max_length=50, verbose_name='Телеграм чат ID', **NULLABLE)
     objects = UserManager()
 
