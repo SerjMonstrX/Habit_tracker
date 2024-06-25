@@ -1,7 +1,6 @@
 from django.db.models import Q
 from rest_framework.generics import CreateAPIView, UpdateAPIView, ListAPIView, RetrieveAPIView, DestroyAPIView
 from rest_framework.permissions import IsAuthenticated
-
 from habits.models import Habit
 from habits.paginators import CustomPagination
 from habits.permissions import IsCreator

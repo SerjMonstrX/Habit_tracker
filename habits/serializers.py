@@ -6,7 +6,6 @@ from habits.validators import (
 )
 
 
-
 class HabitSerializer(serializers.ModelSerializer):
 
     class Meta:

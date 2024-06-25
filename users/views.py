@@ -9,8 +9,6 @@ from users.models import User
 from users.serializers import UserProfileSerializer
 
 
-
-
 class UsersListAPIView(generics.ListAPIView):
     serializer_class = UserProfileSerializer
     queryset = User.objects.all()
