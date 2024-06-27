@@ -30,7 +30,6 @@ class HabitTestCase(APITestCase):
             'is_public': False,
         }
         self.habit_data_2 = {
-            'creator': self.user.id,
             'name': 'Test Habit 2',
             'place': 'Улица',
             'time': '17:00:00',
@@ -58,7 +57,6 @@ class HabitTestCase(APITestCase):
         Тест на создание привычки с связанной привычкой.
         """
         habit_data_2 = {
-            'creator': self.user.id,
             'name': 'Test Habit 2',
             'place': 'Офис',
             'time': '15:00:00',
@@ -73,9 +71,8 @@ class HabitTestCase(APITestCase):
         response = self.client.post(url, habit_data_2, format='json')
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
 
-        habit_2 = Habit.objects.get(name='Test Habit 2')
+        habit_2 = Habit.objects.get(id= 2)
         habit_data_3 = {
-            'creator': self.user.id,
             'name': 'Test Habit 3',
             'place': 'Спортзал',
             'time': '18:00:00',

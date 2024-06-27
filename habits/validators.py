@@ -25,12 +25,10 @@ class MaxTimeToCompleteValidator:
 class RelatedHabitValidator:
 
     def __call__(self, value):
-        print(value)
-        related_habit_name = value.get('related_habits')
-        print(related_habit_name)
-        if related_habit_name:
+        related_habit = value.get('related_habits')
+        if related_habit:
             try:
-                related_habit = Habit.objects.get(name=related_habit_name)
+                related_habit = Habit.objects.get(id=related_habit.id)
                 if not related_habit.is_pleasant:
                     raise ValidationError("Связанная привычка должна быть приятной.")
             except Habit.DoesNotExist:

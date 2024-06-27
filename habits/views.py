@@ -8,12 +8,13 @@ from habits.serializers import HabitSerializer
 
 
 class HabitCreateAPIView(CreateAPIView):
+    queryset = Habit.objects.all()
     serializer_class = HabitSerializer
     permission_classes = [IsAuthenticated]
 
     def perform_create(self, serializer):
         user = self.request.user
-        serializer.save(creator=user,)
+        serializer.save(creator=user)
 
 
 class HabitListAPIView(ListAPIView):
