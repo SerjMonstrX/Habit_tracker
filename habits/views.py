@@ -8,7 +8,6 @@ from habits.serializers import HabitSerializer
 
 
 class HabitCreateAPIView(CreateAPIView):
-    queryset = Habit.objects.all()
     serializer_class = HabitSerializer
     permission_classes = [IsAuthenticated]
 
